@@ -9,9 +9,11 @@ dotenv.config();
 
 conectarDB();
 
+const dominiosPermitidos = ['https://animessence-frontend-uiaj.vercel.app', 'http://localhost:5173'];
+
 const app = express();
 app.use(cors({
-    origin: 'http://localhost:4200',
+    origin: dominiosPermitidos,
     methods: ['GET', 'POST'],
     credentials: true,
     allowedHeaders: 'Content-Type, Authorization'
